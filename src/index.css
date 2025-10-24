@@ -1,0 +1,395 @@
+
+*{
+   
+    margin:0;
+    padding:0;
+}
+
+html{
+    height:100vh;
+    width:100vw;
+}
+#root,
+body{
+    height:100%;
+    width:100%;
+    background-color:#111;
+
+}
+.Box_login{
+    height: 100%;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center; ;
+}
+
+
+.form_class{
+   max-width: 28rem;
+    width:100%;
+    max-height: 100%;
+    height: 400px;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    justify-content:center;
+    border-radius:10px;
+    gap:10px;
+    border:2px solid #49df8a;
+}
+
+.input_class,
+.button_class{
+   width: 100%;
+   max-width: 250px;
+    /* height:45px; */
+    padding: 0.6rem 0.9rem;
+    border-radius:19px;
+    background-color:#e8e3e3;
+    color:#121111;
+    font-size:16px;
+    cursor:pointer;
+    text-align:center;
+    border:2px solid #49df8a;
+   
+}
+
+.button_class{
+    cursor:pointer;
+    text-align:center;
+    background-color:#49df8a;
+    margin-top: 20px;
+    margin-top: var(--space-3);
+}
+
+.Box-Header{
+   display:flex;
+   padding: var(--space-3);
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.Header{
+    color: #e8e3e3;
+
+    
+}
+
+.Box-task_c{
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: #fff;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+}
+
+.Box-task{
+    display: flex;
+    gap: .75rem;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.container{
+    height: 100%;
+}
+
+.EmployeeDashboard{
+    padding: 40px;
+}
+.AdminDashboard{
+    padding: 40px;
+}
+
+.Tasklist_container{
+    display: flex;
+    gap: 20px;
+    height: 40%;
+    margin-top: 20px;
+    overflow-x: auto;
+ 
+}
+.Tasklist_container::-webkit-scrollbar {
+    display: none;            
+  }
+
+.tasklist_component{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 400px;
+    height: 270px;
+    border-radius: 1rem;
+    background-color: rgb(239, 83, 80);
+    color: #fff;
+   align-items: center;
+}
+
+.task_button{
+   background-color: #bfdf49;
+   height:1.8rem;
+   width: 3.2rem;
+   border-radius: 4px;
+   text-align: center;
+   margin-top: 16px;
+   padding-top: 3px;
+}
+
+.Task_date{
+    margin-top: 26px;
+}
+.task_list_header{
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    height: 20%;
+    width: 100%;
+}
+
+.task_lists{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width:80%
+}
+
+.task_lists p{
+    margin-top: 20px;
+}
+
+.tasks{
+    display: flex;
+    flex-direction: column;;
+    width: 35%;
+    padding: 20px;
+    color: #fff;
+}
+
+.task_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    background-color:#363333;
+    margin-top:20px ;
+    border-radius: 6px;
+}
+.task_form input{
+    width: 100%;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #363333;
+    border:2px solid #49df8a;
+    padding-top:10px ;
+    margin:10px 0px 10px 0px ;
+    padding-left: 10px;
+}
+
+
+.description{
+width: 100%;
+height: 60%;
+}
+
+.task_creation{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #49df8a;
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 5px
+;
+}
+
+
+.task_description{
+padding: 20px;
+color: #fff;
+}
+
+.description_box{
+    height: 250px;
+    width: 400px;
+    background-color: #363333;
+    border:1px solid #49df8a ;
+    border-radius: 6px;
+    color: #fff;
+    font-size: larger;
+    font-weight: 900;
+}
+@media(max-width:528px){
+    .description_box{
+        width: 270px;
+    }
+}
+
+.all_tasks{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* max-height: 174px; */
+    width: 100%;
+    background: #363333;
+    margin-top: 12px;
+    border-radius: 6px;
+  
+       
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+#tasks_list{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 100%;
+ background: #519bbd;
+ color: #fff;
+ border-radius: 8px;
+ padding-top: 11px;
+ padding-bottom: 11px;
+ margin-top: 4px;
+ 
+}
+
+#tasks_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+     font: medium;
+    color: #fff;
+    border-radius: 8px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top: 4px;
+    border:2px solid #95f0bb;
+    
+   }
+
+#tasks_list h2,h3,h5{
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.Accepted_tasks{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 19px;
+}
+
+.failed_mark button{
+    padding: 12px;
+    margin-top: 9px;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    background-color: #49df8a;
+}
+
+.complete_mark button{
+    padding: 12px;
+    margin-top: 9px;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    background-color: #e70909;
+}
+
+.accepted_task{
+    padding-top: 15px;
+}
+
+.accepted_task{
+    padding-top: 19px;
+}
+.accepted_task button{
+    padding: 12px;
+    width: 100%;
+    margin-top: 9px;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    background-color: #553fe2;   
+}
+.completed_task{
+    padding-top: 19px;
+}
+.completed_task button{
+    padding: 12px;
+    width: 100%;
+    margin-top: 9px;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    background-color: #8acc54;  
+}
+
+.fail_task{
+    padding-top: 19px;
+}
+.fail_task button{
+    padding: 12px;
+    width: 100%;
+    margin-top: 9px;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    background-color: #8e4607; 
+}
+
+.accepted_one{
+background-color: #49df8a;
+}
+
+.complete_one{
+background-color: #553fe2;
+}
+
+.failed_one{
+background-color: #7a864f;
+}
+
+.new_one{
+background-color: cornflowerblue;
+}
+
+.task_button{
+    width:fit-content;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* .my_box{
+    overflow-y: auto; 
+   
+}
+.my_box::-webkit-scrollbar {
+    display: none; 
+ }
+  */
+.item2{
+color: #0e9dc1;
+
+}
+
+.item3{
+color: yellow;    
+}
+
+.item4{
+    color: #fff;
+}
+
+.item5{
+ color: #8e4607;   
+}
+
