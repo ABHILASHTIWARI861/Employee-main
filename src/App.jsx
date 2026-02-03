@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import Login from './components/Auth/login';
+import Login from './components/Auth/Login';
 import  EmployeeDashboard from './components/Dashboard/EmployeeDashboard';
 import AdminDashboard from './components/Dashboard/AdminDashboard';
 import { setLocalStorage,getLocalStorage } from "./utils/localStorage";
