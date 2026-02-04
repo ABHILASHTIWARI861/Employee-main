@@ -50,33 +50,33 @@ Admins can create and assign tasks, while employees can track tasks by status.
 
 ## 📂 Project Structure
 
-src/
-├── components/
-│ ├── Auth/
-│ │ └── Login.jsx
-│ ├── Dashboard/
-│ │ ├── AdminDashboard.jsx
-│ │ └── EmployeeDashboard.jsx
-│ ├── other/
-│ │ ├── Header.jsx
-│ │ ├── Create_task.jsx
-│ │ ├── All_task.jsx
-│ │ └── Task_list_number.jsx
-│ └── task_list/
-│ ├── New_task.jsx
-│ ├── Accepted_task.jsx
-│ ├── Completed_task.jsx
-│ └── Failed_task.jsx
-│
-├── context/
-│ └── AuthProvider.jsx
-│
-├── utils/
-│ └── localStorage.js
-│
-├── App.jsx
-├── main.jsx
-└── index.css
+- src/
+  ├── components/
+  │ ├── Auth/
+  │ │ └── Login.jsx
+  │ ├── Dashboard/
+  │ │ ├── AdminDashboard.jsx
+  │ │ └── EmployeeDashboard.jsx
+  │ ├── other/
+  │ │ ├── Header.jsx
+  │ │ ├── Create_task.jsx
+  │ │ ├── All_task.jsx
+  │ │ └── Task_list_number.jsx
+  │ └── task_list/
+  │  ├── New_task.jsx
+  │ ├── Accepted_task.jsx
+  │ ├── Completed_task.jsx
+  │ └── Failed_task.jsx
+  │
+  ├── context/
+  │ └── AuthProvider.jsx
+  │
+  ├── utils/
+  │ └── localStorage.js
+  │
+  ├── App.jsx
+  ├── main.jsx
+- └── index.css
 
 
 ---
@@ -84,13 +84,12 @@ src/
 ## 🧪 Demo Credentials
 
 ### Admin
-Email: Admin@123
-Password: 123
+- Email: Admin@123
+- Password: 123
 
 ### Employee
-Email: amit@gmail.com
-
-Password: 123
+- Email: amit@gmail.com
+- Password: 123
 
 ---
 
