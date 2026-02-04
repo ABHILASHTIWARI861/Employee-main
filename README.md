@@ -1,16 +1,143 @@
-# React + Vite
+# 🧑‍💼 Employee Task Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A role-based **Employee Task Management System** built with **React** and **Tailwind CSS**.  
+Admins can create and assign tasks, while employees can track tasks by status.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+### 🔐 Authentication
+- Admin & Employee login
+- Role-based dashboards
+- Session persistence using `localStorage`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 👨‍💼 Admin Dashboard
+- Create & assign tasks
+- View all employees with task statistics
+- Centralized state using **Context API**
 
-## Expanding the ESLint configuration
+### 👨‍💻 Employee Dashboard
+- Personalized greeting
+- Task summary cards
+- Task lists by status:
+  - New
+  - Accepted (Active)
+  - Completed
+  - Failed
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React (Hooks)
+- **Styling:** Tailwind CSS v4
+- **Icons:** lucide-react
+- **State Management:** Context API
+- **Storage:** Browser `localStorage`
+
+---
+
+## 🧠 Key Concepts Used
+
+- React Hooks (`useState`, `useEffect`, `useContext`)
+- Immutable state updates (`map`, spread operator)
+- Role-based conditional rendering
+- Component-based architecture
+- Clean UI with Tailwind utilities
+
+---
+
+## 📂 Project Structure
+
+src/
+├── components/
+│ ├── Auth/
+│ │ └── Login.jsx
+│ ├── Dashboard/
+│ │ ├── AdminDashboard.jsx
+│ │ └── EmployeeDashboard.jsx
+│ ├── other/
+│ │ ├── Header.jsx
+│ │ ├── Create_task.jsx
+│ │ ├── All_task.jsx
+│ │ └── Task_list_number.jsx
+│ └── task_list/
+│ ├── New_task.jsx
+│ ├── Accepted_task.jsx
+│ ├── Completed_task.jsx
+│ └── Failed_task.jsx
+│
+├── context/
+│ └── AuthProvider.jsx
+│
+├── utils/
+│ └── localStorage.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+
+
+---
+
+## 🧪 Demo Credentials
+
+### Admin
+Email: Admin@123
+Password: 123
+
+### Employee
+Email: amit@gmail.com
+
+Password: 123
+
+---
+
+## 🎨 UI Highlights
+
+- Modern card-based layouts
+- Responsive grids
+- Color-coded task statuses
+- Icons with `lucide-react`
+- Tailwind v4 setup
+
+---
+
+## 🧠 State Management Logic
+
+- Employee & admin data stored in `localStorage`
+- Loaded into Context on app start
+- All updates follow **immutable patterns**
+- No direct state mutation (`push`, direct assignment avoided)
+
+---
+
+## ⚠️ Important Notes
+
+- `setState` is used to signal React with **new references**
+- Temporary form data handled via local variables
+- UI updates rely on immutable updates
+
+---
+
+## 📌 Future Improvements
+
+- Backend integration (Node.js + MongoDB)
+- JWT authentication
+- Task action buttons (Accept / Complete / Fail)
+- Admin analytics dashboard
+- Dark mode & animations
+
+---
+
+## 📄 License
+
+This project is for learning and demonstration purposes.
+
+---
+
+## 👨‍💻 Author
+
+**Abhilash Tiwari**  
+Frontend / React Developer
