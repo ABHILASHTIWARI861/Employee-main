@@ -51,28 +51,38 @@ Admins can create and assign tasks, while employees can track tasks by status.
 ## 📂 Project Structure
 ```
 src/
+│
 ├── components/
-│ ├── Auth/
-│ │ └── Login.jsx
-│ ├── Dashboard/
-│ │ ├── AdminDashboard.jsx
-│ │ └── EmployeeDashboard.jsx
-│ ├── other/
-│ │ ├── Header.jsx
-│ │ ├── Create_task.jsx
-│ │ ├── All_task.jsx
-│ │ └── Task_list_number.jsx
-│ └── task_list/
-│ ├── New_task.jsx
-│ ├── Accepted_task.jsx
-│ ├── Completed_task.jsx
-│ └── Failed_task.jsx
+│   │
+│   ├── auth/
+│   │   └── Login.jsx
+│   │
+│   ├── dashboard/
+│   │   ├── AdminDashboard.jsx
+│   │   └── EmployeeDashboard.jsx
+│   │
+│   ├── header/
+│   │   └── Header.jsx
+│   │
+│   ├── tasks/
+│   │   ├── CreateTask.jsx
+│   │   ├── TaskStats.jsx
+│   │   ├── TaskList.jsx
+│   │   │
+│   │   ├── cards/
+│   │   │   ├── NewTask.jsx
+│   │   │   ├── AcceptedTask.jsx
+│   │   │   ├── CompletedTask.jsx
+│   │   │   └── FailedTask.jsx
+│   │   │
+│   │   └── admin/
+│   │       └── AllTasks.jsx
 │
 ├── context/
-│ └── AuthProvider.jsx
+│   └── AuthProvider.jsx
 │
 ├── utils/
-│ └── localStorage.js
+│   └── localStorage.js
 │
 ├── App.jsx
 ├── main.jsx
