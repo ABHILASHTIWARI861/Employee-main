@@ -16,13 +16,14 @@ function Create_task(){
 
 
 
-    function Submit_Handler(e){
+ /*   function Submit_Handler(e){
         e.preventDefault();
-        setTask({title,description,date,category,active:false,newTask:true,completed:false,failed:false})
+        setTask({title,description,date,category,active:false,newTask:true,completed:false,failed:false})  // new_task me nya task ka object to bn gya,pr ye object update tabhi hoga jb websir rerendering hoga,ya to tum useEffect se kra lo,ya fir tum directly is object ko yha use kr lo,jaise niche kr rha hu.
+                                                                                                           //UseEffect is not efficient,do baar kyu render krna website ko             
         console.log("new taqsk",new_task);
 
 
-        const data=user_data;
+        const data=user_data;  //--->>ye line reference of (data == user_data) ko same kr deti hai
         console.log(data);
     
         
@@ -30,21 +31,77 @@ function Create_task(){
         data.forEach(function(e){
           if(AssignTo==e.firstname){
             console.log(e);
-            e.tasks.push(new_task)
-            console.log(e);
-            e.taskStats.newTask=e.taskStats.newTask+1;
-
+            e.tasks.push(new_task)    //--->> ye line data me nya document/task daal(push kr) rha hai,chuki "refrence" of both (data==user_data) is same ,jo bhi change tum data me karoge wo user_data me bhi ho ga.
+                                    //-->>in simple word ,we are doing MUTATION here.
+            console.log(e);           
+            e.taskStats.newTask=e.taskStats.newTask+1; //-->> ye line data me naye task ka count badha rhi hai,chuki refrence of both (data==user_data) is same ,jo bhi change tum data me karoge wo user_data me bhi ho ga.
+                                                       //-->>in simple word ,we are doing MUTATION here.
           }
         })
+//mutate-->>Original notebook me directly likh diya
+//Immutate-->>Pehle xerox banayi,Us copy me likha
 
-        set_user_data(data);
+//QUESTION-->>“Data mutate ho gaya(i.e data jha pahuchna tha wha shi se pahuch gya hai), to setState me mutated data ja raha hai (set_user_data(data);)
+//phir UI kyu nahi update hoti?”
+
+set_user_data(data); 
+
+//Usestate ka logic samjho-->>
+//setState data set karne ke liye nahi,
+//React ko “signal” dene ke liye hota hai —
+//aur signal sirf NEW reference se milta hai, aur hamara to reference badal hi nhi rha hai,i.e both (data=user_data) have same reference
+//“Same reference means React will not re-render.”
         
+
+
         set_TaskTitle('');
         set_catagory('');
         set_AssignTo('');
         set_taskDate('');
         set_taskDescription('');
     }
+
+
+Ek line me final truth
+
+React ko farq nahi padta “andar kya badla”
+React sirf ye dekhta hai:
+👉 KYA KOI REFERENCE NAYA AAYA?
+
+*/
+
+function Submit_Handler(e){
+    e.preventDefault();
+    const new_task={
+        category:category,
+        date:date,
+        title:title,
+        description:description,
+        active:false,
+        newTask:true,
+        completed:false,
+        failed:false
+    }
+  
+
+
+    set_user_data(prev_data=>prev_data.map((emp)=>{
+        if(emp.firstname===AssignTo){
+            return{
+                ...emp,
+                tasks:[...emp.tasks,new_task],  //immutability-->>spread operator se naya array bna ke de rha hai,jisme purane tasks bhi hai aur naya task bhi add ho gya hai.
+                                                //Reference change ho gya hai,kyuki naya array bna hai.
+                taskStats:{
+                    ...emp.taskStats,
+                    newTask:emp.taskStats.newTask+1
+                }
+            }
+        }
+        return emp;
+    }))
+
+}
+
 
 
 
@@ -106,3 +163,17 @@ export default Create_task;
 
 
 
+// ❌ push (MUTATION) VS ✅ Spread (IMMUTABLE)
+
+/* emp.tasks.push(newTask);
+Purana array change ❌
+Reference same ❌
+React re-render skip ❌ kyuki reference same hai
+*/
+
+/* [...emp.tasks, newTask]
+Purana array untouched ✅
+Naya array bana ✅
+Reference change ✅
+React re-render ✅ kyuki reference change hai
+*/
