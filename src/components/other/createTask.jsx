@@ -104,59 +104,98 @@ function Submit_Handler(e){
 
 
 
+return (
+  <form
+    onSubmit={Submit_Handler}
+    className="bg-white rounded-2xl shadow-lg p-6 mb-8"
+  >
+    <h2 className="text-xl font-semibold text-gray-800 mb-6">
+      Create New Task
+    </h2>
 
-    return (
-        
-           <form onSubmit={Submit_Handler}
-             action="" className='task_form'>
-                <div className='task_container'>
-            <div className='tasks'>
-        <div>
-            <h3>Task Title</h3>
-            <input value={title} onChange={(event=>{
-                set_TaskTitle(event.target.value);
-            })} type="text" placeholder='Make a UI design' />
-        </div>
-        <div>
-            <h3>Date</h3>
-            <input value={date} onChange={(event=>{
-                set_taskDate(event.target.value)
-            })}type="date" placeholder='' />
-        </div>
-        <div>
-            <h3>Assign to</h3>
-            <input value={AssignTo} onChange={(event=>{
-                set_AssignTo(event.target.value);
-            })}
-            type="text" placeholder='Employee Name' />
-        </div>        
-        <div>
-            <h3>Catagory</h3>
-            <input value={category} onChange={(event=>{
-                set_catagory(event.target.value);
-            })}type="text" placeholder='design,dev,etc' />
-        </div>
-            </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      {/* Task Title */}
+      <div>
+        <label className="block text-sm font-medium text-gray-600 mb-1">
+          Task Title
+        </label>
+        <input
+          value={title}
+          onChange={(e) => set_TaskTitle(e.target.value)}
+          type="text"
+          placeholder="Make a UI design"
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
 
+      {/* Date */}
+      <div>
+        <label className="block text-sm font-medium text-gray-600 mb-1">
+          Due Date
+        </label>
+        <input
+          value={date}
+          onChange={(e) => set_taskDate(e.target.value)}
+          type="date"
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
 
-        <div className='task_description'>
-        <div>
-            <h3>Description</h3>
-        <textarea value={description} 
-        onChange={(event=>{
-            set_taskDescription(event.target.value);
-        })}
-        className="description_box" type="text"  />
-        </div>
-        <div className='task_creation'>
-        <p><button>Create Task</button></p>
-        </div>
-        </div>
-        </div>
-        </form>
-       
+      {/* Assign To */}
+      <div>
+        <label className="block text-sm font-medium text-gray-600 mb-1">
+          Assign To
+        </label>
+        <input
+          value={AssignTo}
+          onChange={(e) => set_AssignTo(e.target.value)}
+          type="text"
+          placeholder="Employee Name"
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
 
-    )
+      {/* Category */}
+      <div>
+        <label className="block text-sm font-medium text-gray-600 mb-1">
+          Category
+        </label>
+        <input
+          value={category}
+          onChange={(e) => set_catagory(e.target.value)}
+          type="text"
+          placeholder="design / dev / management"
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+    </div>
+
+    {/* Description */}
+    <div className="mt-6">
+      <label className="block text-sm font-medium text-gray-600 mb-1">
+        Description
+      </label>
+      <textarea
+        value={description}
+        onChange={(e) => set_taskDescription(e.target.value)}
+        rows="4"
+        placeholder="Describe the task in detail..."
+        className="w-full px-4 py-2 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+    </div>
+
+    {/* Submit Button */}
+    <div className="mt-6 flex justify-end">
+      <button
+        type="submit"
+        className="px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition"
+      >
+        Create Task
+      </button>
+    </div>
+  </form>
+)
 }
 
 export default Create_task;
