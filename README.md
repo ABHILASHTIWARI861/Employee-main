@@ -49,8 +49,8 @@ Admins can create and assign tasks, while employees can track tasks by status.
 ---
 
 ## 📂 Project Structure
-
-- src/
+```
+ src/
   ├── components/
   │ ├── Auth/
   │ │ └── Login.jsx
@@ -80,7 +80,7 @@ Admins can create and assign tasks, while employees can track tasks by status.
 
 
 ---
-
+```
 ## 🧪 Demo Credentials
 
 ### Admin
@@ -88,7 +88,7 @@ Admins can create and assign tasks, while employees can track tasks by status.
 - Password: 123
 
 ### Employee
-- Email: amit@gmail.com
+- Email: amit@gmail.com or priya@example.com or rahul@example.com ...so on as per role
 - Password: 123
 
 ---
